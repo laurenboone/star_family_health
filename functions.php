@@ -216,3 +216,56 @@ add_action( 'wp_enqueue_scripts', 'genesis_ig_multiple_google_fonts' );
 function genesis_ig_multiple_google_fonts() {
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Montserrat&display=swap' );
 }
+
+genesis_register_sidebar( array(
+	'id' => 'page-image',
+	'name' => __( 'Page Image', 'genesis' ),
+	'description' => __( 'Page Image', 'digital-pro' ),
+	) );
+	
+	add_action( 'genesis_after_header', 'add_genesis_widget_area' );
+	function add_genesis_widget_area() {
+					genesis_widget_area( 'page-image', array(
+			'before' => '<div class="page-image widget area">',
+			'after'  => '</div>',
+		) );
+	
+	}
+
+	function starFamily_features() {
+        add_theme_support('title-tag');
+        add_theme_support('post-thumbnails');
+        add_image_size('professorLandscape', 400, 260, true);
+        add_image_size('professorPortrait', 480, 650, true);
+        add_image_size('pageBanner', 1500, 350, true);
+    }
+    
+	add_action('after_setup_theme', 'starFamily_features');
+	
+	function starFamily_post_types() {
+		register_post_type('doctor', array(
+			'public' => true,
+			'menu_icon' => 'dashicons-groups',
+			'labels' => array (
+				'name' => 'Doctors'
+			)
+		));
+		
+		register_post_type('location', array(
+			'public' => true,
+			'menu_icon' => 'dashicons-location',
+			'labels' => array (
+				'name' => 'Locations'
+			)
+		));
+
+		register_post_type('services', array(
+			'public' => true,
+			'menu_icon' => 'dashicons-portfolio',
+			'labels' => array (
+				'name' => 'Medical Services'
+			)
+		));
+	}
+
+	add_action('init', 'starFamily_post_types');

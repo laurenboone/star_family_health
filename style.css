@@ -387,18 +387,18 @@ figure {
 input,
 select,
 textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #333;
-	font-size: 18px;
-	font-weight: 400;
+	background-color: transparent;
+	border: 1px solid #00152C;
+	color: #00152C;
+	font-size: 22px;
+	font-weight: normal;
 	padding: 15px;
-	width: 100%;
+	/* width: 100%; */
 }
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border: 1px solid #00152C;
 	outline: none;
 }
 
@@ -423,6 +423,7 @@ input[type="radio"] {
 	opacity: 1;
 }
 
+/* LB COMMENT: custom button */
 button,
 input[type="button"],
 input[type="reset"],
@@ -430,18 +431,24 @@ input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form input[type="submit"],
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"],
 .button {
-	background-color: #333;
+	background-color: #FFAB0D;
 	border: 0;
-	border-radius: 5px;
-	color: #fff;
+	border-radius: 6px;
+	color: #000;
 	cursor: pointer;
-	font-size: 16px;
-	font-weight: 600;
+	font-size: 25px;
+	line-height: 31px;
+	font-weight: normal;
+	font-style: normal;
 	padding: 15px 30px;
 	text-align: center;
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.015em;
+	font-family: Merriweather Sans;
 }
 
 button:focus,
@@ -458,9 +465,11 @@ input[type="submit"]:hover,
 .site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #0073e5;
-	border-width: 0;
-	color: #fff;
+	border: 2px solid #FFAB0D;
+	box-sizing: border-box;
+	border-radius: 6px;
+	color: #000;
+	background: none;
 }
 
 .entry-content .button:focus,
@@ -596,7 +605,7 @@ th {
 .site-inner {
 	clear: both;
 	margin-left: 15%;
-	padding: 60px 30px 0;
+	padding: 20px 30px 0;
 }
 
 
@@ -1055,11 +1064,15 @@ figcaption,
 
 .genesis-nav-menu {
 	clear: both;
-	line-height: 1;
+	line-height: 28px;
 	width: 100%;
 	display: flex;
 	flex-flow: column nowrap;
-
+	font-family: Merriweather;
+	font-size: 22px;
+	color: #00152C;
+	align-items: center;
+	/* border-style: solid; */
 
 }
 
@@ -1487,7 +1500,7 @@ p.entry-meta {
 		top: 0;
 		z-index: 9999;
 		/* LB COMMENT: Menu will extend to 15% of page until screen is smaller than 960px */
-		width: 15%;
+		/* width: 15%; */
 		/* LB COMMENT: placeholder to figure out how to make it auto extend the length of the page. */
 		min-height: 1560px;
 	}
@@ -1867,3 +1880,58 @@ p.entry-meta {
 	background-color: #fff;
 }
 
+/* Homepage */
+
+#body-background {
+	background-color: #F0F6FC;
+}
+
+.widget-wrap {
+ width: 943px;
+ height: 298px;
+ left: 381px;
+ top: 263px;
+ background: white;
+ padding: 20px;
+ width: 90%;
+ /* margin-left: 10%; */
+ /* height: 50%; */
+ /* opacity: 0.5; */
+}
+
+.button-hero {
+	float: right;
+}
+
+/* Page Image
+--------------------------------------------- */
+
+.page-image img {
+	width: 100%;
+	/*padding-top: 70px;*/
+}
+	
+.page-image h1 {
+	text-align: center;
+}
+
+.secondary-nav {
+	/* position: absolute; */
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+
+	display: flex;
+	justify-content: flex-end;
+
+	padding: 0px 0px 40px 0px;
+	margin-right: 10%;
+
+	/* border: 1px solid #00152C; */
+	box-sizing: border-box;
+}
+
+/* .container {
+	display: flex;
+} */
